@@ -4,8 +4,8 @@ ENV TRACKER_PORT=8000
 
 RUN apk add gcompat
 
-WORKDIR /opt/bitorrent-tracker
+WORKDIR /opt/bittorrent-tracker
 COPY . ./
 RUN npm install
 
-ENTRYPOINT ["bash", "-c", "/opt/bittorrent-tracker/bin/cmd.js --port ${TRACKER_PORT}"]
+ENTRYPOINT ["sh", "-c", "/opt/bittorrent-tracker/bin/cmd.js --port ${TRACKER_PORT}"]
